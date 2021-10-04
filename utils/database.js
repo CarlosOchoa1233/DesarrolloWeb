@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const {aplicarRelaciones} = require('./relations')
 const sequelize = new Sequelize('ChaJosBD','user1','root',{
     dialect: 'mysql',
-    host:'localhost',
+    host:'54.198.161.35',
     define:{
         timestamps: false,
         freezeTableName: true
