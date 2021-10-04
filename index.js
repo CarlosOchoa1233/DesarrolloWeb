@@ -1,10 +1,14 @@
 const express = require("express")
+const sequelize = require('./utils/database')
+const vjRoutes = require('./routes/videojuegos')
 const app = express();
 
-app.get("/prueba", (req, res)=>{
-    res.send("Prueba de servidor funcionando")
-})
+app.use('/videojuegos',vjRoutes);
 
-app.listen(8080, ()=>{
-    console.log("Servidor en linea por el puerto 8080")
-})
+sequelize.sync()
+    .then(
+        app.listen(8080,()=>{
+            console.log("Servidor online en el puerto 8080")
+        })
+    )
+    .catch(err=>console.log(err))
