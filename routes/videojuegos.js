@@ -2,18 +2,22 @@ const express = require("express")
 const vjController = require('../controllers/videojuegos')
 const router = express.Router()
 
-
-//Formulario de ingreso de datos
-router.get('/agregarVideojuego',vjController.getAgregarVideojuego)
-//Servicio para el procesamiento de los datos
+//Agregar
 router.post('/agregarVideojuego',vjController.postAgregarVideojuego)
-//Pagina de confirmacion
-router.get('/confirmacionDatos',vjController.getConfirmacionDatos)
-//Visualización de los datos guardados
-router.get('/mostrarVideojuegos',vjController.getMostrarVideojuegos)
-
-router.get('/obtenerVideojuego',vjController.getObtenerVideojuegos)
+router.post('/agregarConsola', vjController.postAgregarConsola)
+router.post('/agregarConsolaVideojuego', vjController.postAgregarConsolaVideojuego)
+//Obtener
+router.get('/obtenerVideojuegos',vjController.getObtenerVideojuegos)
+router.get('/obtenerConsolas', vjController.getObtenerConsola)
+router.get('/obtenerConsolaVideojuegos', vjController.getObtenerConsolaVideojuego)
+//Borrar
 router.post('/borrarVideojuego',vjController.postBorrarVideojuego)
+router.post('/borrarConsola',vjController.postBorrarConsola)
+router.post('/borrarConsolaVideojuego',vjController.postBorrarConsolaVideojuego)
+//Actualizar
 router.post('/actualizarVideojuego',vjController.postActualizarVideojuego)
+router.post('/actualizarConsola',vjController.postActualizarConsola)
+router.post('/actualizarConsolaVideojuego',vjController.postActualizarConsolaVideojuego)
+
 
 module.exports = router
