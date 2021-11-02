@@ -56,8 +56,12 @@ exports.postAgregarPlaylistLibroCancion = (req,res)=>{
         })
 }
 
-exports.getObtenerCanciones = (req,res)=>{
-    Cancion.findAll()
+exports.getObtenerCancion = (req,res)=>{
+    Cancion.findOne({
+        where:{
+            id: req.body.id
+        } 
+     })
         .then(canciones =>{
             console.log(canciones)
             res.json(canciones)
@@ -65,8 +69,12 @@ exports.getObtenerCanciones = (req,res)=>{
         .catch(err=>console.log(err))
 }
 
-exports.getObtenerLibros = (req,res)=>{
-    Libro.findAll()
+exports.getObtenerLibro = (req,res)=>{
+    Libro.findOne({
+        where:{
+            id: req.body.id
+        } 
+     })
         .then(libros =>{
             console.log(libros)
             res.json(libros)
@@ -75,7 +83,11 @@ exports.getObtenerLibros = (req,res)=>{
 }
 
 exports.getObtenerPlaylist = (req,res)=>{
-    Playlist.findAll()
+    Playlist.findOne({
+        where:{
+            id: req.body.id
+        } 
+     })
         .then(playlists =>{
             console.log(playlists)
             res.json(playlists)
@@ -84,7 +96,11 @@ exports.getObtenerPlaylist = (req,res)=>{
 }
 
 exports.getObtenerPlaylistLibroCancion = (req,res)=>{
-    PlaylistLibroCancion.findAll()
+    PlaylistLibroCancion.findOne({
+        where:{
+            idPLC: req.body.idPLC
+        } 
+     })
         .then(plc =>{
             console.log(plc)
             res.json(plc)
@@ -180,7 +196,7 @@ exports.postBorrarPlaylistLibroCancion = (req,res)=>{
 exports.postActualizarCancion = (req,res)=>{
     console.log(req.body)
     Cancion.update({
-        autor:req.body.autor
+        artista:req.body.artista
     },{
       where:{
           id: req.body.id
@@ -234,13 +250,13 @@ exports.postActualizarPlaylist = (req,res)=>{
     })
 }
 
-exports.postActualizarPlaylist = (req,res)=>{
+exports.postActualizarPlaylistLibroCancion = (req,res)=>{
     console.log(req.body)
-    Playlist.update({
-        nombre:req.body.nombre
+    PlaylistLibroCancion.update({
+        fecha:req.body.nombre
     },{
       where:{
-          id: req.body.id
+          idPLC: req.body.id
       }  
     })
     .then(() =>{

@@ -9,10 +9,10 @@ router.post('/agregarPlaylist',plController.postAgregarPlaylist)
 router.post('/agregarPlaylistLibroCancion',plController.postAgregarPlaylistLibroCancion)
 
 //Obtener
-router.get('/obtenerCanciones',plController.getObtenerCanciones)
-router.get('/obtenerLibros',plController.getObtenerLibros)
-router.get('/obtenerPlaylists',plController.getObtenerPlaylist)
-router.get('/obtenerPlaylistLibroCanciones',plController.getObtenerPlaylistLibroCancion)
+router.get('/obtenerCancion',plController.getObtenerCancion)
+router.get('/obtenerLibro',plController.getObtenerLibro)
+router.get('/obtenerPlaylist',plController.getObtenerPlaylist)
+router.get('/obtenerPlaylistLibroCancion',plController.getObtenerPlaylistLibroCancion)
 
 //Borrar
 router.post('/borrarCancion',plController.postBorrarCancion)
@@ -25,6 +25,6 @@ router.post('/borrarPlaylistLibroCancion',plController.postBorrarPlaylistLibroCa
 router.post('/actualizarCancion',plController.postActualizarCancion)
 router.post('/actualizarLibro',plController.postActualizarLibro)
 router.post('/actualizarPlaylist',plController.postActualizarPlaylist)
-
+router.post('/actualizarPlaylistLibroCancion',plController.postActualizarPlaylistLibroCancion)
 
 module.exports = router
