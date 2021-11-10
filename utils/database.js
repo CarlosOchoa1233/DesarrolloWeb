@@ -10,13 +10,9 @@ const sequelize = new Sequelize('ChaJosBD','user1','root',{
 })
 
 const modelDefiners = [
-    require('../models/videojuegos'),
-    require('../models/consolas'),
-    require('../models/consolaVideojuegos'),
-    require('../models/canciones'),
-    require('../models/libros'),
-    require('../models/playlists'),
-    require('../models/playlistLibrosCanciones')
+    require('../models/equipos'),
+    require('../models/jugadores'),
+    require('../models/equipoFav')
 ]
 
 for(const modelDefiner of modelDefiners){

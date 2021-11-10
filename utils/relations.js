@@ -7,6 +7,9 @@ function aplicarRelaciones(sequelize){
     const Libro = sequelize.models.libro
     const Playlist = sequelize.models.playlist
     const PlaylistLibroCancion = sequelize.models.playlistLibroCancion
+    const Equipo = sequelize.models.equipo
+    const Jugador = sequelize.models.jugador
+    const EquipoFav = sequelize.models.equipoFav
 
     Videojuego.belongsToMany(Consola,{through:consolaVideojuego});
     Consola.belongsToMany(Videojuego,{through:consolaVideojuego});
@@ -14,6 +17,8 @@ function aplicarRelaciones(sequelize){
     Libro.belongsToMany(Playlist,{through:PlaylistLibroCancion});
     Playlist.belongsToMany(Libro,{through:PlaylistLibroCancion});
     Playlist.belongsToMany(Cancion,{through:PlaylistLibroCancion});
+    Equipo.hasOne(Jugador);
+    Equipo.hasOne(EquipoFav);
 }
 
 module.exports = {aplicarRelaciones}
