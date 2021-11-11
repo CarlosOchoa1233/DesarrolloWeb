@@ -12,7 +12,8 @@ const sequelize = new Sequelize('ChaJosBD','user1','root',{
 const modelDefiners = [
     require('../models/equipos'),
     require('../models/jugadores'),
-    require('../models/equipoFav')
+    require('../models/equipoFav'),
+    require('../models/jugadorFav')
 ]
 
 for(const modelDefiner of modelDefiners){
