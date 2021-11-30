@@ -16,5 +16,7 @@ router.post('/borrarEquipoFav',nflController.postBorrarEquipoFav)
 router.post('/borrarJugadorFav',nflController.postBorrarJugadorFav)
 //Actualizar
 router.post('/actualizarRecord',nflController.postActualizarRecord)
+router.post('/actualizarEquipoJugador',nflController.postActualizarEquipoJugador)
+router.post('/actualizarJugadorFav',nflController.postActualizarJugadorFav)
 
 module.exports = router

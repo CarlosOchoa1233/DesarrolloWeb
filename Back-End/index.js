@@ -1,4 +1,5 @@
 const express = require("express")
+const cors = require("cors")
 const sequelize = require('./utils/database')
 const nflRoutes = require('./routes/nfl')
 const app = express();
